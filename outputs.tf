@@ -1,3 +1,3 @@
 output ips { 
- value = google_compute_network.vpc_network.*.name
+ value = google_compute_instance.vm_instance.*.network_interface
 }
