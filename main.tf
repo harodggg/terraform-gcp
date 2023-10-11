@@ -19,5 +19,5 @@ provider "google" {
 }
 
 resource "google_compute_network" "vpc_network" {
-  name = "a_network"
+  name = "a-network"
 }
