@@ -24,7 +24,7 @@ resource "google_compute_network" "vpc_network" {
 }
 
 resource "google_compute_instance" "vm_instance" {
-  count = 2
+  count = var.machine_num
   name         = "my-instance-${count.index}"
   machine_type = "e2-micro"
 
@@ -41,3 +41,11 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
 }
+
+
+
+data "google_compute_address" "my_address" {
+  count = var.machine_num
+  name = "my-instance-${count.index}"
+}
+
