@@ -53,6 +53,6 @@ variable "startup_script" {
   tar -xf /root/node.tar.xz  -C /root/node --strip-components 1;
   ln -s /root/node/bin/npm /usr/local/bin/;
   ln -s /root/node/bin/node /usr/local/bin/;
-  curl -o- -L https://yarnpkg.com/install.sh | bash
+  curl -o- -L https://yarnpkg.com/install.sh | bash;
   EOF
 }
