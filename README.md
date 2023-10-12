@@ -8,8 +8,8 @@
 
 # define your needs in variables.tf file
 ### 1, the machine number -- 机器数量
-### 2，startup_script -- 第一次创建机器时运行的命令
-### 3，......
+### 2, startup_script -- 第一次创建机器时运行的命令
+### 3, ......
 
 # start running
 ### 1, terraform init -- download provider,and initita envioment
