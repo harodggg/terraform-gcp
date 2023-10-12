@@ -43,3 +43,16 @@ variable "open_ports" {
   default = ["22", "80"]
   type    = list(any)
 }
+
+variable "startup_script" {
+  default = <<-EOF
+  sudo apt -y update;
+  sudo apt -y upgrade;
+  wget https://nodejs.org/dist/v18.18.1/node-v18.18.1-linux-x64.tar.xz -O /root/node.tar.xz;
+  mkdir /root/node;
+  tar -xf /root/node.tar.xz  -C /root/node --strip-components 1;
+  ln -s /root/node/bin/npm /usr/local/bin/;
+  ln -s /root/node/bin/node /usr/local/bin/;
+  npm install -g yarn;
+  EOF
+}
