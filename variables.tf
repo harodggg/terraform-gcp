@@ -40,6 +40,6 @@ variable "public_keys" {
 }
 
 variable "open_ports" {
-    default = ["22","80"]
-    type = list
-  }
+  default = ["22", "80"]
+  type    = list(any)
+}
