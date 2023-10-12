@@ -54,5 +54,7 @@ variable "startup_script" {
   ln -s /root/node/bin/npm /usr/local/bin/;
   ln -s /root/node/bin/node /usr/local/bin/;
   curl -o- -L https://yarnpkg.com/install.sh | bash;
+  echo 'export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"' >> /root/.bashrc;
+  source /root/.bashrc;
   EOF
 }
