@@ -20,7 +20,7 @@ variable "zone" {
 }
 
 variable "machine_num" {
-  default     = 1
+  default     = 3
   type        = number
   description = "The number of the machine what we need"
 }
@@ -53,6 +53,6 @@ variable "startup_script" {
   tar -xf /root/node.tar.xz  -C /root/node --strip-components 1;
   ln -s /root/node/bin/npm /usr/local/bin/;
   ln -s /root/node/bin/node /usr/local/bin/;
-  npm install -g yarn;
+  curl -o- -L https://yarnpkg.com/install.sh | bash
   EOF
 }
