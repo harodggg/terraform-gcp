@@ -53,8 +53,11 @@ variable "startup_script" {
   tar -xf /root/node.tar.xz  -C /root/node --strip-components 1;
   ln -s /root/node/bin/npm /usr/local/bin/;
   ln -s /root/node/bin/node /usr/local/bin/;
+  ln -s /root/node/bin/npx /usr/local/bin/;
   curl -o- -L https://yarnpkg.com/install.sh | bash;
   echo 'export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"' >> /root/.bashrc;
   source /root/.bashrc;
+  npm config set prefix /usr/local;
+  npm install -g n;
   EOF
 }
