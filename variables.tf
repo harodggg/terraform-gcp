@@ -8,19 +8,32 @@ variable "credentials_file" {
   type    = string
 }
 
+
+/*
+ * asia-east1--台湾
+ * asia-east2--香港
+ * us-central1
+ * asia-northeast1--日本东京
+ * asia-south1--印度孟买
+ * asia-southeast1--新加坡
+ * australia-southeast1--澳大利亚
+ * europe-west1 -10 -- 欧洲
+ * more,https://cloud.google.com/compute/docs/regions-zones?hl=zh-cn
+ */
+
 variable "region" {
-  default = "us-central1"
+  default = "europe-west2"
   type    = string
 
 }
 
 variable "zone" {
-  default = "us-central1-c"
+  default = "europe-west2-c"
   type    = string
 }
 
 variable "machine_num" {
-  default     = 3
+  default     = 4
   type        = number
   description = "The number of the machine what we need"
 }
@@ -59,5 +72,6 @@ variable "startup_script" {
   source /root/.bashrc;
   npm config set prefix /usr/local;
   npm install -g n;
+  npm install -g @fleekxyz/cli;
   EOF
 }
